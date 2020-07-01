@@ -1,31 +1,23 @@
 # apps
-applications 
 
 ## Three centers demo
 
-----------------------
-|     |   busybox-0  | 
-|IDC A|   busybox-1  |
-|     |   busybox-2  |
-----------------------
+Data center server topography
 
-----------------------
-|     |   busybox-3  | 
-|IDC B|   busybox-4  |
-|     |   busybox-5  |
-----------------------
+|  DC-A | DC-B | DC-C |
+| ---- | ---- | ---- |
+| busybox-0 | busybox-3 | busybox-6 |
+| busybox-1 | busybox-4 | busybox-7 |
+| busybox-2 | busybox-5 | busybox-8 |
 
-----------------------
-|     |   busybox-6  | 
-|IDC C|   busybox-7  |
-|     |   busybox-8  |
-----------------------
-       10ms
-IDC A <---->  IDC B
-       20ms
-IDC A <---->  IDC C
-       30ms
-IDC B <---->  IDC C
+The latency between different IDC
+| DCs | Latency |
+| ---- | ---- |
+| A <--> B | 10ms |
+| A <--> C | 20ms |
+| B <--> C | 30ms |
+
+
 ```
 # Create apps run on three centers
 kubectl apply -f https://raw.githubusercontent.com/chaos-mesh/apps/master/three-centers/busybox-statefulset.yaml
