@@ -1,6 +1,6 @@
 # Chaos Apps
 
-## Three centers demo
+## Three data centers demo
 Data center server topography
 
 |  DC-A | DC-B | DC-C |
@@ -9,7 +9,7 @@ Data center server topography
 | busybox-1 | busybox-4 | busybox-7 |
 | busybox-2 | busybox-5 | busybox-8 |
 
-The latency between different IDC
+The latency between different DCs
 | DCs | Latency |
 | ---- | ---- |
 | A <--> B | 10ms |
