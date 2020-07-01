@@ -13,7 +13,7 @@ spec:
        - busybox-1
        - busybox-2
  delay:
-   latency: "20ms"
+   latency: "10ms"
  direction: to
  target:
    selector:
@@ -36,11 +36,11 @@ spec:
  selector:
    pods:
      busybox:
-       - busybox-0
-       - busybox-1
-       - busybox-2
+       - busybox-3
+       - busybox-4
+       - busybox-5
  delay:
-   latency: "10ms"
+   latency: "30ms"
  direction: to
  target:
    selector:
@@ -63,17 +63,17 @@ spec:
  selector:
    pods:
      busybox:
-       - busybox-3
-       - busybox-4
-       - busybox-5
+       - busybox-6
+       - busybox-7
+       - busybox-8
  delay:
-   latency: "5ms"
+   latency: "20ms"
  direction: to
  target:
    selector:
      pods:
        busybox:
-         - busybox-6
-         - busybox-7
-         - busybox-8
+         - busybox-0
+         - busybox-1
+         - busybox-2
    mode: all
