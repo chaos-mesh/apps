@@ -40,4 +40,8 @@ kubectl exec busybox-3 -it -n busybox -- ping -c 2 busybox-6.busybox.busybox.svc
 # PING busybox-6.busybox.busybox.svc (10.244.3.11): 56 data bytes
 # 64 bytes from 10.244.3.11: seq=0 ttl=63 time=30.219 ms
 # 64 bytes from 10.244.3.11: seq=1 ttl=63 time=30.367 ms
+
+# clean up data center and chaos
+kubectl delete -f https://raw.githubusercontent.com/chaos-mesh/apps/master/three-centers/network-delay.yaml
+kubectl delete -f https://raw.githubusercontent.com/chaos-mesh/apps/master/three-centers/busybox-statefulset.yaml
 ```
