@@ -1,0 +1,79 @@
+apiVersion: pingcap.com/v1alpha1
+kind: NetworkChaos
+metadata:
+ name: network-delay-a
+ namespace: busybox
+spec:
+ action: delay
+ mode: all
+ selector:
+   pods:
+     busybox:
+       - busybox-0
+       - busybox-1
+       - busybox-2
+ delay:
+   latency: "20ms"
+ direction: to
+ target:
+   selector:
+     pods:
+       busybox:
+         - busybox-3
+         - busybox-4
+         - busybox-5
+   mode: all
+
+---
+apiVersion: pingcap.com/v1alpha1
+kind: NetworkChaos
+metadata:
+ name: network-delay-b
+ namespace: busybox
+spec:
+ action: delay
+ mode: all
+ selector:
+   pods:
+     busybox:
+       - busybox-0
+       - busybox-1
+       - busybox-2
+ delay:
+   latency: "10ms"
+ direction: to
+ target:
+   selector:
+     pods:
+       busybox:
+         - busybox-6
+         - busybox-7
+         - busybox-8
+   mode: all
+
+---
+apiVersion: pingcap.com/v1alpha1
+kind: NetworkChaos
+metadata:
+ name: network-delay-c
+ namespace: busybox
+spec:
+ action: delay
+ mode: all
+ selector:
+   pods:
+     busybox:
+       - busybox-3
+       - busybox-4
+       - busybox-5
+ delay:
+   latency: "5ms"
+ direction: to
+ target:
+   selector:
+     pods:
+       busybox:
+         - busybox-6
+         - busybox-7
+         - busybox-8
+   mode: all
