@@ -1,7 +1,6 @@
-# apps
+# Chaos Apps
 
 ## Three centers demo
-
 Data center server topography
 
 |  DC-A | DC-B | DC-C |
