@@ -1,4 +1,4 @@
-apiVersion: pingcap.com/v1alpha1
+apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
  name: network-delay-a
@@ -25,7 +25,7 @@ spec:
    mode: all
 
 ---
-apiVersion: pingcap.com/v1alpha1
+apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
  name: network-delay-b
@@ -52,7 +52,7 @@ spec:
    mode: all
 
 ---
-apiVersion: pingcap.com/v1alpha1
+apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:
  name: network-delay-c
