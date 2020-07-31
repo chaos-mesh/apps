@@ -27,7 +27,7 @@ spec:
     matchLabels:
       app: busybox # has to match .spec.template.metadata.labels
   serviceName: "busybox"
-  replicas: 1 # by default is 1
+  replicas: 2 # by default is 1
   template:
     metadata:
       labels:
