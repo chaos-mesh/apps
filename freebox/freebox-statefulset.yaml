@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+   name: freebox
+   labels:
+     name: freebox
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: freebox
+  namespace: freebox
+  labels:
+    app: freebox
+spec:
+  clusterIP: None
+  selector:
+    app: freebox
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: freebox
+  namespace: freebox
+spec:
+  selector:
+    matchLabels:
+      app: freebox # has to match .spec.template.metadata.labels
+  serviceName: "freebox"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: freebox # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: freebox
+        image: freebox
+        imagePullPolicy: IfNotPresent
+        command: ['sh', '-c', 'echo Container is Running ; sleep 3600']
